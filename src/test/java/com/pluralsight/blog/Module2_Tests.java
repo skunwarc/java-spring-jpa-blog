@@ -181,7 +181,7 @@ public class Module2_Tests {
                 1, interfaces.length);
 
         assertEquals("Task 4: CategoryRepository should be an interface that extends JpaRepository<Category, Long>.",
-                JpaRepository.class, interfaces[0]);
+                CategoryRepository.class, interfaces[0]);
     }
 
     @Test

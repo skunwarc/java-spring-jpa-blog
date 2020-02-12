@@ -9,15 +9,17 @@ import java.util.Date;
 public class Post {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(length = 1000000)
-	@Lob
 	private Long id;
 	private String title;
 	private String lead;
+	@Column(length = 1000000)
+	@Lob
 	private String body;
 	private String author;
 	@Temporal(TemporalType.DATE)
 	private Date date;
+	@ManyToOne
+	private Category category;
 
 	public Post() {
 		super();
@@ -85,4 +87,13 @@ public class Post {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	
 }
